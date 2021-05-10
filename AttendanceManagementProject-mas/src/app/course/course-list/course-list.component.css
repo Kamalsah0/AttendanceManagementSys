@@ -1,0 +1,18 @@
+.container{
+    height : 350px;
+}
+
+.number{
+    border: 2px solid black;
+}
+nav{
+    background-color:rgb(63, 101, 136);
+}
+.footer{
+    position: fixed;
+    background-color:rgb(63, 101, 136);
+}
+.nav-link
+{
+    cursor: pointer;
+}

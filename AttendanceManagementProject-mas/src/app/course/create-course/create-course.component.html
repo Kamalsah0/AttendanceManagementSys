@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-sm navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a href="#" class="nav-link">Home</a>   
+        </li>
+        <li class="nav-item">
+            <a routerLink="courses" routerLinkActive="active" class="nav-link"  (click)="goToCourses()">Course List </a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="#" routerLinkActive="active" class="nav-link"  (click)="goToAddCourse()">Add Course </a>
+        </li>
+    </ul>
+</nav>
+<div class="container">
+<div class="col-md-8 offset-md-3"><br>
+    
+    <h3>Create Course</h3><br>
+    <form [formGroup]="addCourseForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label>Course Name</label>
+            <input class="form-control" type="text"  name="courseName" formControlName="courseName" [(ngModel)]="course.courseName" >
+            <small class="error" *ngIf="courseName.invalid && courseName.touched">*Course name is required*</small>
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea class="form-control" name="discription" formControlName="discription" [(ngModel)]="course.description" >
+            </textarea><small class="error" *ngIf="discription.invalid && discription.touched">*Description is required*</small>
+        </div>
+        <button [disabled]="addCourseForm.invalid" class="
+        btn btn-primary" type="submit">Submit</button>
+        <button  type="button" class="btn btn-link" (click) ="goToCourseList()"> Back</button>
+    </form>
+</div>
+</div>
+<div class="footer">
+    <span>
+        All Rights Reserved 2021 @Angular
+    </span>
+</div>

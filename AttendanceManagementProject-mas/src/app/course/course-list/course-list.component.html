@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-sm navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a href="#" class="nav-link">Home</a>   
+        </li>
+        <li class="nav-item">
+            <a routerLink="#" routerLinkActive="active" class="nav-link"  >Course List </a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="create-course" routerLinkActive="active" class="nav-link" (click)="goToAddCourse()">Add Course </a>
+        </li>
+    </ul>
+</nav>
+<div class="container">
+<div class='card-body'>
+    <div class='row'>
+      <div class='col-md-5'>
+        <label for="search" style="color: rgb(63, 101, 136);">Search Course </label> <br>
+    <input type="search" name="search" [(ngModel)]="listFilter" 
+    (input)="filter_course()">
+    
+    </div>
+    <h3 style="color: rgb(63, 101, 136);">Course List</h3>
+    </div>
+</div>
+<cdk-virtual-scroll-viewport  itemSize="100" class="container">
+    <table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>Course_id</th>
+            <th>Course_Name</th>
+            <th>Course_Description</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr *cdkVirtualFor="let course of course" class="number">
+            <td>{{course.courseId}}</td>
+            <td>{{course.courseName}}</td>
+            <td>{{course.description}}</td>
+            <td>
+                <button (click)="updateCourse(course.courseId)" class="btn btn-info">Update</button>
+                <button (click)="deleteCourse(course.courseId)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+</cdk-virtual-scroll-viewport>
+</div>
+<div class="footer">
+    <span>
+        All Rights Reserved 2021 @Angular
+    </span>
+</div>

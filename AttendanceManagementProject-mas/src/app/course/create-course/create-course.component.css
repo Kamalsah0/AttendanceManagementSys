@@ -1,0 +1,51 @@
+h3 
+{
+    color:rgb(63, 101, 136);
+    margin-left: 200px;
+}
+input.ng-invalid{
+    border-left: 5px solid red;
+}
+textarea.ng-invalid
+{
+    border-left: 5px solid red;
+}
+.error
+{
+    color: red;
+}
+.form-control.ng-touched.ng-invalid
+{
+    
+    border: 1px solid red;
+}
+.form-control.ng-touched.ng-valid
+{
+    border: 1px solid green;
+}
+.btn-link
+{
+    margin-left:10px;
+}
+.container
+{
+    height: 600px;
+    width: 900px;
+    background-image: url('bg.jpg');
+    background-repeat:no-repeat;
+    background-size:1000px 600px ;
+}
+form{
+    margin-left: 200px;
+}
+nav{
+    background-color:rgb(63, 101, 136);
+}
+.footer{
+    position: fixed;
+    background-color:rgb(63, 101, 136);
+}
+.nav-link
+{
+    cursor: pointer;
+}
